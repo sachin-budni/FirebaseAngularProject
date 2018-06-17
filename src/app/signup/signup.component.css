@@ -1,0 +1,19 @@
+.main{
+    margin-top : 10vw;
+  }
+  .email{
+    width: 400px;
+    margin-left: 30vw;
+  }
+  .password{
+    width: 400px;
+    margin-left: 30vw;
+  }
+  .bnt{
+    width: 400px;
+    margin-left: 40vw;
+  }
+  a{
+      margin-left: 30vw;
+      font-size: 1.2vw;
+  }
