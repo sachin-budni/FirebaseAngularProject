@@ -10,7 +10,7 @@ export class SignupService {
 
   SignUpEmail(email,password){
     return this.afAuth.auth.createUserWithEmailAndPassword(email,password).
-    then(ref=>{console.log(ref)}).catch(err=>console.log(err));
+    then(ref=>{console.log(ref)});
   }
 
 }

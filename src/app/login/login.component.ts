@@ -10,7 +10,8 @@ export class LoginComponent implements OnInit {
 
   email:string;
   password:string;
-
+  flag : boolean = false;
+  err : string;
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
@@ -21,7 +22,10 @@ export class LoginComponent implements OnInit {
   }
 
   EmailSign(){
-    this.loginService.signInWithEmail(this.email,this.password);
+    this.loginService.signInWithEmail(this.email,this.password).catch(err=>{
+      this.flag = true;
+      this.err = err.message;
+    });
   }
 
 }

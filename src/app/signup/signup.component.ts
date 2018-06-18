@@ -10,14 +10,18 @@ export class SignupComponent implements OnInit {
 
   email:string;
   password:string;
-
+  flag:boolean=false;
+  error : string;
   constructor(private signupService:SignupService) { }
 
   ngOnInit() {
   }
 
   createAccount(){
-    this.signupService.SignUpEmail(this.email,this.password);
+    this.signupService.SignUpEmail(this.email,this.password).catch(err=>{
+      this.flag = true;
+      this.error = err.message;
+    });
   }
 
 }

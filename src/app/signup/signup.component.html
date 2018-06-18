@@ -1,4 +1,12 @@
 <form class="main" #login (ngSubmit)="createAccount()">
+    <div *ngIf="flag" class="alert">
+        <i class="material-icons">
+            clear
+            </i>
+            <span class="mes">
+              {{error}}
+            </span>
+    </div>
     <div class="email">
       <div class="form-group">
         <label>Email :</label>

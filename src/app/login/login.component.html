@@ -1,4 +1,7 @@
 <form class="main" #login (ngSubmit)="EmailSign()">
+  <div *ngIf="flag" class="err">
+    {{err}}
+  </div>
   <div class="email">
     <div class="form-group">
       <label>Email :</label>

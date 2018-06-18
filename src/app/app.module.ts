@@ -16,12 +16,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmployeeComponent } from './employee/employee.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupService } from './signup/signup.service';
+import { EmployeeService } from './employee/employee.service';
 
  export const routes:Routes=[
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
+  {path:'employee',component:EmployeeComponent},
   {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'**',redirectTo:'login',pathMatch:'full'},
+  {path:'**',redirectTo:'login',pathMatch:'full'}
 ]
 
 @NgModule({
@@ -38,7 +40,7 @@ import { SignupService } from './signup/signup.service';
     FormsModule,RouterModule.forRoot(routes),
     MatInputModule
   ],
-  providers: [LoginService,SignupService],
+  providers: [LoginService,SignupService,EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
