@@ -17,13 +17,16 @@ import { EmployeeComponent } from './employee/employee.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupService } from './signup/signup.service';
 import { EmployeeService } from './employee/employee.service';
-
+import { HomeComponent } from './home/home.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
  export const routes:Routes=[
+  {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'employee',component:EmployeeComponent},
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'**',redirectTo:'login',pathMatch:'full'}
+  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'**',redirectTo:'home',pathMatch:'full'}
 ]
 
 @NgModule({
@@ -31,12 +34,13 @@ import { EmployeeService } from './employee/employee.service';
     AppComponent,
     LoginComponent,
     EmployeeComponent,
-    SignupComponent
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,AngularFireStorageModule,AngularFireDatabaseModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,MatToolbarModule,MatIconModule,
     FormsModule,RouterModule.forRoot(routes),
     MatInputModule
   ],

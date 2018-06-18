@@ -1,6 +1,11 @@
 <form class="main" #login (ngSubmit)="EmailSign()">
-  <div *ngIf="flag" class="err">
-    {{err}}
+  <div *ngIf="flag" class="alert">
+    <i class="material-icons">
+      clear
+      </i>
+      <span class="mes">
+        {{err}}
+      </span>
   </div>
   <div class="email">
     <div class="form-group">
@@ -11,7 +16,7 @@
 
   <div class="password">
     <div class="form-group">
-      <label>Position :</label>
+      <label>Password :</label>
       <input class="form-control" type="password" name="password" [(ngModel)]="password" placeholder="Password" required>
     </div>
   </div>
