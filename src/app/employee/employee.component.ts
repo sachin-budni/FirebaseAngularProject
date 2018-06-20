@@ -34,6 +34,5 @@ export class EmployeeComponent implements OnInit {
   emailSigOut(){
     this.employeeService.singOut();
   }
-  
 
 }

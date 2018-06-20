@@ -1,0 +1,23 @@
+<div class="mainclick" *ngIf="flag">
+  <div class="mainlogindiv">
+    <div *ngIf="loginlogout">
+        {{email}}
+    </div>
+    <div class="buttons" *ngIf="loginlogout">
+      <button mat-raised-button color="primary" (click)="logInLogout()">Logout</button>
+    </div>
+    <div class="buttons" *ngIf="!loginlogout">
+        <button mat-raised-button color="primary" (click)="logIn()">Login</button>
+    </div>
+  </div>
+</div>
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a routerLink="/home">
+      <span>Home</span>
+    </a>
+    <span class="example-spacer"></span>
+    <img [src]="photoUrl" alt="login" title="Login" class="loginImg" (click)="OpenLogin()">
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -20,6 +20,9 @@ import { EmployeeService } from './employee/employee.service';
 import { HomeComponent } from './home/home.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { NavbarComponent } from './navbar/navbar.component';
+import {MatButtonModule} from '@angular/material/button';
+
  export const routes:Routes=[
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
@@ -35,12 +38,13 @@ import {MatIconModule} from '@angular/material/icon';
     LoginComponent,
     EmployeeComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,AngularFireStorageModule,AngularFireDatabaseModule,
-    BrowserAnimationsModule,MatToolbarModule,MatIconModule,
+    BrowserAnimationsModule,MatToolbarModule,MatIconModule,MatButtonModule,
     FormsModule,RouterModule.forRoot(routes),
     MatInputModule
   ],
