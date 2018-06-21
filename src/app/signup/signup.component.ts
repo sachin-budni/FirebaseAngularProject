@@ -18,10 +18,18 @@ export class SignupComponent implements OnInit {
   }
 
   createAccount(){
-    this.signupService.SignUpEmail(this.email,this.password).catch(err=>{
-      this.flag = true;
-      this.error = err.message;
-    });
+    if(this.email.indexOf("@") == -1){
+        this.error = "email id Error";
+        this.flag = true;
+      }else if(this.password == undefined){
+        this.error = "password is required";
+        this.flag = true;
+    }else{
+      this.signupService.SignUpEmail(this.email,this.password).catch(err=>{
+        this.flag = true;
+        this.error = err.message;
+      });
+    }
   }
 
 }

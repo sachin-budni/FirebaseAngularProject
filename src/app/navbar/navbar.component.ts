@@ -30,10 +30,11 @@ export class NavbarComponent implements OnInit {
         this.photoUrl = './../../assets/img.png';
       }else{
         this.loginlogout = true;
-        console.log(ref);
         this.email = ref.email;
         this.photoUrl = ref.photoURL;
-        console.log(this.photoUrl);
+        if(this.photoUrl == undefined){
+          this.photoUrl = './../../assets/img.png';
+        }
         this.lastSignin = ref.metadata.lastSignInTime;
         this.createTime = ref.metadata.creationTime;
         this.date = new Date(this.lastSignin);

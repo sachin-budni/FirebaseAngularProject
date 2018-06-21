@@ -17,6 +17,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  resetForm(){
+    this.email = '';
+    this.password = '';
+    this.flag = false;
+  }
+
   GoogleSign(){
     this.loginService.signInWithGoogle();
   }
