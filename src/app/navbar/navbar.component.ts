@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
     this.user.subscribe(ref=>{
       if(!ref){
         this.loginlogout = false;
-        this.route.navigate(['/login']);
+        //this.route.navigate(['/login']);
         this.photoUrl = './../../assets/img.png';
       }else{
         this.loginlogout = true;

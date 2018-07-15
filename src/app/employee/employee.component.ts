@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from './employee.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: 'app-employee',
@@ -14,7 +15,8 @@ export class EmployeeComponent implements OnInit {
   lastSignin : string;
   createTime:string;
   date = new Date();
-  constructor(private employeeService:EmployeeService,private route:Router) { }
+  userList : AngularFireList<any>;
+  constructor(private employeeService:EmployeeService,private route:Router,private afData:AngularFireDatabase) { }
 
   ngOnInit() {
     this.user = this.employeeService.getUser();
@@ -34,5 +36,5 @@ export class EmployeeComponent implements OnInit {
   emailSigOut(){
     this.employeeService.singOut();
   }
-
+  
 }

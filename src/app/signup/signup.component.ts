@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupService } from './signup.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,11 @@ export class SignupComponent implements OnInit {
   password:string;
   flag:boolean=false;
   error : string;
-  constructor(private signupService:SignupService) { }
+  constructor(private signupService:SignupService,private router:Router) {
+    if(this.signupService.getSignStart == undefined){
+      this.router.navigate(['/signup'])
+    }
+   }
 
   ngOnInit() {
   }
